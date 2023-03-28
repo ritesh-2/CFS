@@ -1,0 +1,13 @@
+.t-c {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+  }
+
+  mat-form-field{
+    width: 100%;
+  }
+
+  mat-progress-spinner{
+   padding-right: 1em;
+  }

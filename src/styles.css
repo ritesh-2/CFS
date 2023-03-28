@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.pl-2 {
+  padding-left: 1.2rem;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.justify-center{
+  justify-content: center;
+}
+
+.text-center{
+  text-align: center !important;
+}
+.text-dark {
+  color: rgb(50, 50, 50);
+}
+
+.bold {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+.spacer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.card-container {
+  width: 100%;
+  z-index: 0;
+  /* margin: 1.2rem; */
+}
+
+.h-100 {
+  height: 80%;
+}
+
+.text-l {
+  font-size: 2.1rem;
+}
+
+/* mat-form-field{
+  border: 2px solid black;
+} */
+.mat-form-field mat-label {
+  display: none;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+  .text-l {
+    font-size: 1.6rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .text-l {
+    font-size: 1.2rem;
+  }
+}

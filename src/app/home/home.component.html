@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button>
+        <span class="material-symbols-outlined">
+            fastfood
+        </span>
+    </button>
+    <span> Cafe Management System </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="loginAction()">
+        <mat-icon>login</mat-icon>
+    </button>
+    <button mat-icon-button (click)="signupAction()">
+        <mat-icon>input</mat-icon>
+    </button>
+    <button mat-icon-button (click)="forgotPasswordAction()">
+        <mat-icon>lock_open</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div class="home-container">
+    <div class="card-container">
+        <div class="home-title">Welcome Guest !</div> 
+      
+        <div class="subtitle"> Please 
+            <button mat-button class="login-btn" (click)="loginAction()">Log In</button> Or
+            <button mat-button class="signup-btn" (click)="signupAction()" >Sign Up</button> to enjoy our services
+        </div>
+    </div>
+
+</div>

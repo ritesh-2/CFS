@@ -1,0 +1,12 @@
+
+
+/* mat-grid-tile{
+    width: 100%;
+} */
+
+mat-grid-list mat-card{
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+

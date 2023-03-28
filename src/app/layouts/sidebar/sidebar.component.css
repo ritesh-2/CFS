@@ -1,0 +1,16 @@
+mat-icon {
+    color: white;
+}
+
+mat-list-item {
+    background-color: rgba(250, 246, 246, 0.762);
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+mat-list-item a {
+    display: flex;
+    vertical-align: middle;
+    color: white;
+    text-decoration: none;
+}

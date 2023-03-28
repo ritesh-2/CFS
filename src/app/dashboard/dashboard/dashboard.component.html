@@ -1,0 +1,61 @@
+<mat-card class="p-20">
+    <span class="m-auto">Dashbboard</span>
+</mat-card>
+
+
+    <!-- <div class="card-container"> -->
+        <mat-grid-list cols="3"  rowHeight="fit" class="h-100" gutterSize="1.2rem">
+            <mat-grid-tile>
+                <!-- <div class="card-container"> -->
+                    <mat-card class="p-20 mat-elevation-z0">
+                        <mat-card-header class="m-auto text-l">
+                            Total Category
+                        </mat-card-header>
+                        <hr>
+                        <mat-card-content class="m-auto">
+                            {{data?.category}}
+                        </mat-card-content>
+                        <hr>
+                        <mat-card-actions class="m-auto" >
+                            <button  [routerLink]="['/cafe/category']" mat-stroked-button color="accent">View
+                                category</button>
+                        </mat-card-actions>
+                    </mat-card>
+                <!-- </div> -->
+        
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="p-20 ">
+                    <mat-card-header  class="m-auto text-l">
+                        Total Product
+                    </mat-card-header>
+                    <hr>
+                    <mat-card-content  class="m-auto">
+                        {{data?.product}}
+                    </mat-card-content>
+                    <hr>
+                    <mat-card-actions  class="m-auto">
+                        <button [routerLink]="['/cafe/product']" mat-stroked-button color="accent">View
+                            Product</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <mat-card class="p-20 mat-elevation-z0">
+                    <mat-card-header class="m-auto text-l">
+                        Total Bill 
+                    </mat-card-header>
+                    <hr>
+                    <mat-card-content class="m-auto">
+                        {{data?.bill}}
+                    </mat-card-content>
+                    <hr>
+                    <mat-card-actions class="m-auto">
+                        <button [routerLink]="['/cafe/bill']" mat-stroked-button color="accent">View Bill</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+    <!-- </div> -->
+

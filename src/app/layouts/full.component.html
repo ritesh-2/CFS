@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="topbar telative">
+
+    <button mat-icon-button *ngIf="sideDrawer.mode === 'over'" (click)="sideDrawer.toggle()" value="sidebarclosed">
+        <mat-icon *ngIf="!sideDrawer.opened">menu</mat-icon>
+        <mat-icon *ngIf="sideDrawer.opened">close</mat-icon>
+    </button>
+    <b>
+        <span>
+            <mat-icon>storefront</mat-icon>
+        </span>
+    </b>
+    <span class="pl-2">
+        Cafe Management System
+    </span>
+    <span class="example-spacer"></span>
+ 
+    <app-header></app-header>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sideDrawer mode="side" opened>
+    
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

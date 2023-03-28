@@ -1,0 +1,11 @@
+  mat-card form mat-form-field{
+    width: 20%;
+    margin: 20px;
+
+  }
+  #card2 form mat-form-field{
+    width: 18%;
+    margin: 10px;
+
+  }
+
