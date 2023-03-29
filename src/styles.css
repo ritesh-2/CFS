@@ -28,7 +28,9 @@ body {
 .justify-center{
   justify-content: center;
 }
-
+.align-center{
+  align-items: center !important;
+}
 .text-center{
   text-align: center !important;
 }
