@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalConstants } from 'src/app/constants/global.constants';
 import { BillService } from 'src/app/services/bill.service';
@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { LoadingService } from 'src/app/services/shared/loading.service';
 import { SnackbarService } from 'src/app/services/shared/snackbar.service';
 import { saveAs } from 'file-saver'
+import { PdfComponent } from 'src/app/pdf/pdf.component';
 
 @Component({
   selector: 'app-manage-order',
@@ -15,6 +16,9 @@ import { saveAs } from 'file-saver'
   styleUrls: ['./manage-order.component.css']
 })
 export class ManageOrderComponent {
+
+  pdfData: any;
+  childToggle = false;
   displayColumns: string[] = ['name', 'category', 'price', 'quantity', 'total', 'edit'];
   dataSource: any = [];
   responseMessage: any;
@@ -135,27 +139,32 @@ export class ManageOrderComponent {
   }
 
   add() {
-    let formData = this.manageOrderForm.value;
-    let productName = this.dataSource.find((e: { id: number; }) => e.id === formData.product.id)
-    if (productName === undefined) {
-      this.totalAmount = this.totalAmount + formData.total;
-      this.dataSource.push({
-        id: formData.product.id,
-        name: formData.product.name,
-        category: formData.category.name,
-        quantity: formData.quantity,
-        price: formData.price,
-        total: formData.total
+    try {
+      let formData = this.manageOrderForm.value;
+      let productName = this.dataSource.find((e: { id: number; }) => e.id === formData.product.id)
+      if (productName === undefined) {
+        this.totalAmount = this.totalAmount + formData.total;
+        this.dataSource.push({
+          id: formData.product.id,
+          name: formData.product.name,
+          category: formData.category.name,
+          quantity: formData.quantity,
+          price: formData.price,
+          total: formData.total
 
-      })
+        })
 
-      this.dataSource = [...this.dataSource]
-      this.snackBar.openSnackBar(GlobalConstants.PRODUCT_ADDED, GlobalConstants.SUCCESS)
-      // this.manageOrderForm.reset();
+        this.dataSource = [...this.dataSource]
+        this.snackBar.openSnackBar(GlobalConstants.PRODUCT_ADDED, GlobalConstants.SUCCESS)
+        // this.manageOrderForm.reset();
+      }
+      else {
+        this.snackBar.openSnackBar(GlobalConstants.PRODUCT_EXIST_ERROR, GlobalConstants.ERROR)
+      }
+    } catch (err) {
+      console.error(err)
     }
-    else {
-      this.snackBar.openSnackBar(GlobalConstants.PRODUCT_EXIST_ERROR, GlobalConstants.ERROR)
-    }
+
   }
 
   handleDelteAction(value: any, element: any) {
@@ -175,12 +184,15 @@ export class ManageOrderComponent {
       paymentMethod: formData.paymentMethod,
       totalAmount: this.totalAmount,
       productDetails: JSON.stringify(this.dataSource),
-      createdBy:formData.email
+      createdBy: formData.email
     }
 
     this.bill.generateReport(data).subscribe({
       next: (resp: any) => {
-        this.downloadFile(resp?.uuid);
+        // this.downloadFile(resp?.uuid);
+        // it will pass the pdfData to child pdf comdponent which will create pdf and emit succes or failure event
+        this.pdfData = data;
+        this.loadPdfComponent()
         this.manageOrderForm.reset();
         this.dataSource = null;
         this.totalAmount = 0;
@@ -199,11 +211,43 @@ export class ManageOrderComponent {
     }
 
     this.bill.getPDF(data).subscribe({
-      next:(resp)=>{
-        saveAs(resp,fileName+'.pdf')
+      next: (resp) => {
+        saveAs(resp, fileName + '.pdf')
       }
     })
 
   }
+
+
+  /***************** PDF SEcTIOn**************** */
+
+  handleChildOutput(data: any) {
+    if (data && data.message) {
+      console.log('Received data from child:', data);
+    } else if (data && data.error) {
+      console.log('Error occued in PDF genration')
+      this.snackBar.openSnackBar(GlobalConstants.genericError, GlobalConstants.ERROR)
+    }
+    else {
+      console.log(data);
+      this.snackBar.openSnackBar(GlobalConstants.genericError, GlobalConstants.ERROR)
+    }
+
+    this.unloadPdfComponet();
+  }
+
+  loadPdfComponent = () => {
+    this.childToggle = true;
+  }
+
+  unloadPdfComponet = () => {
+    setTimeout(() => {
+      this.childToggle = false;
+    }, 0);
+
+  }
+
+
+  /***************** PDF SEcTIOn close**************** */
 
 }
