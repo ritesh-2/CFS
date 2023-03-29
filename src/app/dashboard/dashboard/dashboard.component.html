@@ -13,12 +13,18 @@
                         </mat-card-header>
                         <hr>
                         <mat-card-content class="m-auto">
-                            {{data?.category}}
+                            <ng-container>
+                                <ng-template #spinner>
+                                    <mat-progress-spinner [diameter]="25" [mode]="'indeterminate'"></mat-progress-spinner>
+                                </ng-template>
+                               <div *ngIf="!(loadingSer.loading$ | async) else spinner" > {{data?.category}}</div>
+                            </ng-container>
+                          
                         </mat-card-content>
                         <hr>
                         <mat-card-actions class="m-auto" >
-                            <button  [routerLink]="['/cafe/category']" mat-stroked-button color="accent">View
-                                category</button>
+                            <button   [routerLink]="['/cafe/category']" mat-stroked-button color="accent">View
+                                </button>
                         </mat-card-actions>
                     </mat-card>
                 <!-- </div> -->
@@ -31,27 +37,37 @@
                     </mat-card-header>
                     <hr>
                     <mat-card-content  class="m-auto">
-                        {{data?.product}}
+                        <ng-container>
+                            <ng-template #spinner>
+                                <mat-progress-spinner [diameter]="25" [mode]="'indeterminate'"></mat-progress-spinner>
+                            </ng-template>
+                           <div *ngIf="!(loadingSer.loading$ | async) else spinner" > {{data?.product}}</div>
+                        </ng-container>
                     </mat-card-content>
                     <hr>
                     <mat-card-actions  class="m-auto">
                         <button [routerLink]="['/cafe/product']" mat-stroked-button color="accent">View
-                            Product</button>
+                        </button>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>
             <mat-grid-tile>
-                <mat-card class="p-20 mat-elevation-z0">
+                <mat-card class="p-20 ">
                     <mat-card-header class="m-auto text-l">
                         Total Bill 
                     </mat-card-header>
                     <hr>
-                    <mat-card-content class="m-auto">
-                        {{data?.bill}}
+                    <mat-card-content class="m-auto">   
+                        <ng-container>
+                            <ng-template #spinner>
+                                <mat-progress-spinner [diameter]="25" [mode]="'indeterminate'"></mat-progress-spinner>
+                            </ng-template>
+                           <div *ngIf="!(loadingSer.loading$ | async) else spinner" >  {{data?.bill}}</div>
+                        </ng-container>
                     </mat-card-content>
                     <hr>
                     <mat-card-actions class="m-auto">
-                        <button [routerLink]="['/cafe/bill']" mat-stroked-button color="accent">View Bill</button>
+                        <button [routerLink]="['/cafe/bill']" mat-stroked-button color="accent">View</button>
                     </mat-card-actions>
                 </mat-card>
             </mat-grid-tile>

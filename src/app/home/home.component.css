@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   font-size: 5rem;
-  color: rgb(39, 37, 37);
+  color:whitesmoke;
   width: fit-content;
   height: 50%;
 
@@ -18,27 +18,73 @@
 }
 
 .card-container {
-  background-color: rgb(228, 228, 228);
+  background-color: #3F51B5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid blue;
+  border: 2px solid rgb(64, 65, 65);
   width: 50%;
   height: 50%;
   border-radius: 20px;
+
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: rgb(32, 31, 31);
+  font-size: 2.1rem;
+  color:whitesmoke;
 }
 
 .login-btn {
-  border: 1px solid rgb(74, 111, 197);
-  color: rgb(74, 111, 197)!important ;
+  border: 1px solid rgb(220, 228, 247);
+  color: rgb(220, 228, 247) !important;
 }
+
 .signup-btn {
-  border: 1px solid rgb(200, 146, 134);
-  color:rgb(200, 146, 134)!important ;
+  border: 1px solid rgb(224, 74, 124);
+  /* color: rgb(200, 146, 134) !important; */
+}
+
+
+@media (max-width: 1200px) {
+  .home-title {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    color:whitesmoke;
+    width: fit-content;
+    height: 50%;
+
+  }
+
+  .card-container{
+    height: 40%;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color:whitesmoke;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .card-container{
+    height: 30%;
+  }
+  .home-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color:whitesmoke;
+    width: fit-content;
+    height: 50%;
+
+  }
+
+  .subtitle {
+    font-size: 0.6rem;
+    color:whitesmoke;
+  }
+
 }

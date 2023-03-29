@@ -1,5 +1,6 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild , AfterViewInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,9 +15,9 @@ import { AddCategoryComponent } from '../add-category/add-category.component';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(MatPaginator) paginator:MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   dataSource: any;
   responseMessage: any;
@@ -27,11 +28,23 @@ export class CategoryComponent implements OnInit {
     private categorySer: CategoryService,
     private dialog: MatDialog,
     private snackbar: SnackbarService,
-    private router: Router
+    private router: Router,
+    private breakPointObserver: BreakpointObserver
   ) { }
 
   ngOnInit(): void {
     this.tableData();
+   
+  }
+
+  ngAfterViewInit(){
+    this.hidePaginatorOptions();
+  }
+
+  hidePaginatorOptions() {
+    this.breakPointObserver.observe([Breakpoints.HandsetPortrait]).subscribe((res) => {
+      this.paginator.hidePageSize = res.matches ? true : false;
+    })
   }
 
   tableData() {
@@ -76,11 +89,11 @@ export class CategoryComponent implements OnInit {
     )
   }
 
-  handleEditAction(values: any) { 
+  handleEditAction(values: any) {
 
     const dialogConfig = new MatDialogConfig()
     dialogConfig.data = {
-      data:values,
+      data: values,
       action: 'Edit'
     }
     dialogConfig.width = '850px';

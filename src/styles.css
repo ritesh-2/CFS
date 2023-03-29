@@ -103,6 +103,12 @@ body {
 
 @media (max-width: 768px) {
   .text-l {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 }
+
+@media (max-width: 576px) { 
+  .text-l {
+    font-size: 0.8rem;
+  }
+ }

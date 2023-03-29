@@ -1,3 +1,4 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, AfterViewInit } from '@angular/core';
 import { GlobalConstants } from 'src/app/constants/global.constants';
@@ -15,12 +16,14 @@ export class DashboardComponent implements AfterViewInit {
   data: any;
 
   constructor(private dashServcie: DashboardService,
-    private loader: LoadingService,
-    private snackBar: SnackbarService
+    public loadingSer: LoadingService,
+    private snackBar: SnackbarService,
+    private breakOvserver: BreakpointObserver
   ) { 
     this.dashBoardData();
     console.log("Dashboard comp loaded..!")
   }
+
 
   ngAfterViewInit(): void {
     return null;
