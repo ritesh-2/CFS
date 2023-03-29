@@ -1,0 +1,54 @@
+<div id="pdfElemt" #pdfElemt>
+    <h2 style="text-align: center;">Cafe Management System</h2>
+    <table style="margin: auto;">
+        <tr>
+            <th> Name: <span>{{data.name}}</span>
+            </th>
+            <th>Email: <span>{{data.email}}</span>
+            </th>
+        </tr>
+        <tr>
+            <th>Contact Number: <span>{{data.contactNumber}}</span>
+            </th>
+            <th>Payment Method: <span>{{data.paymentMethod}}</span>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <h2 style="text-align: center;"> Product Details </h2>
+    <table style="margin: auto; width: 100%;">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Sub Total</th>
+        </tr>
+
+        <tr *ngFor="let product of data.productDetails">
+            <td>
+                {{product.name}}
+            </td>
+            <td>
+
+                {{product.category}}
+            </td>
+            <td>
+
+                {{product.quantity }}
+            </td>
+            <td>
+
+                {{product.price}}
+            </td>
+            <td>
+
+                {{ product.total }}
+            </td>
+        </tr>
+    </table>
+    <br>
+    <h3 style="text-align: center;"> Total: {{data.totalAmount}}
+    </h3>
+    <h2 style="text-align: center;"> Thank You for Visiting.. Please visit again</h2>
+</div>

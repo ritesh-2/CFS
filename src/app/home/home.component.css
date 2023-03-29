@@ -8,6 +8,7 @@
 
 }
 
+
 .home-container {
   display: flex;
   justify-content: center;
@@ -70,19 +71,25 @@
 
 @media (max-width: 768px) {
   .card-container {
-    height: 30%;
+    background: rgb(63,81,181);
+    height: 20%;
   }
 
   .home-title {
     font-size: 1.3rem;
+    color: whitesmoke;
   }
 
   .subtitle {
-    font-size: 0.6rem;
+    color: whitesmoke;
+    font-size: 0.8rem;
   }
 
   .login-btn {
-    padding: 0;
+    padding: 5px;
+    color: white !important;
+    font-weight: 200;
+    border: 1px solid whitesmoke !important;
   }
 
 

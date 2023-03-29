@@ -14,6 +14,7 @@ import { ProductComponent } from './product/product.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { ViewBillProductComponent } from './view-bill-product/view-bill-product.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
+import { PdfComponent } from '../pdf/pdf.component';
 
 
 
@@ -30,6 +31,7 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
     ManageOrderComponent,
     ViewBillProductComponent,
     ManageUserComponent,
+    PdfComponent
 
   ],
   imports: [

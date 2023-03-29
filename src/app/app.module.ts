@@ -19,6 +19,7 @@ import { MenuService } from './services/shared/menu.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/ma
     SidebarComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    LoginComponent
+    LoginComponent,
+    // PdfComponent
   ],
   imports: [
 
