@@ -2,8 +2,8 @@
     <span class="m-auto">Manage Order</span>
     <hr>
     <ng-container>
-        <ng-template #spinner>
-            <mat-progress-spinner [diameter]="25" [mode]="'indeterminate'"></mat-progress-spinner>
+        <ng-template  #spinner>
+            <mat-progress-spinner class="m-auto" [diameter]="25" [mode]="'indeterminate'"></mat-progress-spinner>
         </ng-template>
         <button *ngIf ="!(loadingSer.loading$ | async) else spinner" mat-flat-button color="primary" class="float-right" [disabled]="validateSubmitButton()"
         (click)="submitAction()">Submit & Get Bill</button>

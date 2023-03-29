@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -14,7 +14,8 @@ import { ProductComponent } from '../product/product.component';
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
-  styleUrls: ['./manage-product.component.css']
+  styleUrls: ['./manage-product.component.css'],
+  encapsulation:ViewEncapsulation.None
 })
 export class ManageProductComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
