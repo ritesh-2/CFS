@@ -17,30 +17,24 @@
     </button>
 </mat-toolbar>
 
-<div class="home-container">
+<!-- <div class="home-container">
     <div class="card-container mat-elevation-z8">
         <div class="home-title">Welcome Guest !</div> 
       
-        <div class="subtitle"> Please 
-            <button  class="login-btn" (click)="loginAction()">Log In</button> Or
-            <button class="login-btn"  (click)="signupAction()" >Sign Up</button> 
+        <div > Please 
+            <button mat-icon-button (click)="loginAction()">Log In</button> Or
+            <button mat-icon-button (click)="signupAction()" >Sign Up</button> 
         </div>
     </div>
 
-</div>
+</div> -->
+<div class="container"  fxLayoutAlign="center center" fxLayout="column" >
+    <h1>Welcome Guest :)</h1>
+    <p>Please sign in or sign up to continue.</p>
+    <div class="button-container">
+        <button mat-raised-button color="primary" routerLink="/login">Login</button>
+        <button mat-raised-button color="accent" routerLink="/signup">Sign Up</button>
+      </div>
+  </div>
 
-<mat-card class="home-container">
-    <div class="home-title">Welcome Guest !</div>
-    <div class="subtitle"> Please 
-        <button mat-button class="login-btn" (click)="loginAction()">Log In</button> Or
-        <button mat-button class="signup-btn" color="accent" (click)="signupAction()" >Sign Up</button> 
-    </div>
-</mat-card>
 
-<mat-card class="home-container mat-elevation-z8">
-    <span>Welcome Guest !</span>
-    <mat-card-actions>
-        <button mat-button class="login-btn" (click)="loginAction()">Log In</button> Or
-        <button mat-button class="signup-btn" color="accent" (click)="signupAction()">Sign Up</button>
-    </mat-card-actions>
-</mat-card>

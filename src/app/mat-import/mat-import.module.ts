@@ -19,6 +19,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 const matModules:any = [
   MatSelectModule,
   MatMenuModule,
@@ -37,7 +39,8 @@ const matModules:any = [
   MatDividerModule,
   MatTableModule,
   MatSlideToggleModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  FlexLayoutModule
 ]
 
 
