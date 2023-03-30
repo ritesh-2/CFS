@@ -17,23 +17,12 @@
     </button>
 </mat-toolbar>
 
-<!-- <div class="home-container">
-    <div class="card-container mat-elevation-z8">
-        <div class="home-title">Welcome Guest !</div> 
-      
-        <div > Please 
-            <button mat-icon-button (click)="loginAction()">Log In</button> Or
-            <button mat-icon-button (click)="signupAction()" >Sign Up</button> 
-        </div>
-    </div>
-
-</div> -->
 <div class="container"  fxLayoutAlign="center center" fxLayout="column" >
     <h1>Welcome Guest :)</h1>
     <p>Please sign in or sign up to continue.</p>
     <div class="button-container">
-        <button mat-raised-button color="primary" routerLink="/login">Login</button>
-        <button mat-raised-button color="accent" routerLink="/signup">Sign Up</button>
+        <button mat-raised-button color="primary" (click)="loginAction()">Login</button>
+        <button mat-raised-button color="accent" (click)="signupAction()">Sign Up</button>
       </div>
   </div>
 
