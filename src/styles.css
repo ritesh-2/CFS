@@ -113,4 +113,14 @@ body {
   .text-l {
     font-size: 0.8rem;
   }
+  .mat-mdc-icon-button.mat-mdc-button-base {
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+}
+.mat-mdc-table {
+  width: 100% !important;
+  table-layout: fixed !important;
+  white-space: normal;
+}
  }
