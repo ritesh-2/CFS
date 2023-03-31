@@ -84,7 +84,7 @@ export class ProductComponent {
       name: formData.name,
       categoryId: formData.categoryId,
       price: formData.price,
-      description: formData.name
+      description: formData.description
     }
     this.productSer.update(data).subscribe({
       next: (resp: any) => {

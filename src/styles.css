@@ -25,15 +25,19 @@ body {
 .space-between {
   justify-content: space-between;
 }
-.justify-center{
+
+.justify-center {
   justify-content: center;
 }
-.align-center{
+
+.align-center {
   align-items: center !important;
 }
-.text-center{
+
+.text-center {
   text-align: center !important;
 }
+
 .text-dark {
   color: rgb(50, 50, 50);
 }
@@ -109,18 +113,20 @@ body {
   }
 }
 
-@media (max-width: 576px) { 
+@media (max-width: 576px) {
   .text-l {
     font-size: 0.8rem;
   }
+
   .mat-mdc-icon-button.mat-mdc-button-base {
     width: 25px;
     height: 25px;
     padding: 0px;
+  }
+
+  .mat-mdc-table {
+    width: 100% !important;
+    table-layout: fixed !important;
+    white-space: normal;
+  }
 }
-.mat-mdc-table {
-  width: 100% !important;
-  table-layout: fixed !important;
-  white-space: normal;
-}
- }
